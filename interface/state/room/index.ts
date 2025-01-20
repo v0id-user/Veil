@@ -1,7 +1,7 @@
 import Message from "@/interface/messages";
 import User from "@/interface/users";
 
-interface Room{
+interface RoomState{
     id: string;
     name: string;
     users: User[];
@@ -9,4 +9,4 @@ interface Room{
     messages: Message[];
 }
 
-export default Room;
+export default RoomState;
