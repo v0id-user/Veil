@@ -20,5 +20,3 @@ Veil is a platform for high secure chat-medium to exchange messages and assets i
 # Status
 Under active development.
 
-
-
