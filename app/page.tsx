@@ -1,33 +1,51 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Lock } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader,  DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
+import Link from 'next/link';
+import Image from 'next/image';
+import { Lock, RotateCcw } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogDescription,
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+
 const CreateRoomDialog = () => {
-  {/* TODO: Add a form to create a room */}
+  {
+    /* TODO: Add a form to create a room */
+  }
   return (
     <Dialog>
-      <DialogTrigger asChild>
+      {/* Trigger */}
+      <DialogTrigger asChild dir="rtl">
         <button className="group rounded-full font-bold from-[#F3F3F3] to-[#D4D4D4] bg-gradient-to-b border border-[#E3E3E3] text-black px-12 py-4 relative hover:shadow-lg transition-shadow duration-300 hover:from-[#E3E3E3] hover:to-[#C4C4C4]">
-          <Lock className="absolute top-1/2 left-4 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={20} />
+          <Lock
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            size={20}
+          />
           إنشاء غرفة
         </button>
       </DialogTrigger>
 
+      {/* Content */}
       <DialogContent dir="rtl">
         <DialogHeader>
           <DialogTitle>إنشاء غرفة</DialogTitle>
         </DialogHeader>
         <DialogDescription>
-          <Input
-            placeholder="اسم الغرفة"
+          <Input placeholder="اسم الغرفة" />
+          <RotateCcw
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            size={20}
           />
+          <Button className="w-full rounded-full mt-4">إنشاء</Button>
         </DialogDescription>
-
       </DialogContent>
     </Dialog>
-  )
-}
+  );
+};
 
 export default function Home() {
   return (
@@ -36,13 +54,28 @@ export default function Home() {
       <nav className="w-full max-w-2xl">
         <ul className="flex justify-center gap-12">
           <li>
-            <Link href="/about" className="text-gray-500 hover:text-gray-800 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gray-500 hover:after:w-full after:transition-all after:duration-300 font-light">حول</Link>
+            <Link
+              href="/about"
+              className="text-gray-500 hover:text-gray-800 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gray-500 hover:after:w-full after:transition-all after:duration-300 font-light"
+            >
+              حول
+            </Link>
           </li>
           <li>
-            <Link href="/pricing" className="text-gray-500 hover:text-gray-800 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gray-500 hover:after:w-full after:transition-all after:duration-300 font-light">الأسعار</Link>
+            <Link
+              href="/pricing"
+              className="text-gray-500 hover:text-gray-800 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gray-500 hover:after:w-full after:transition-all after:duration-300 font-light"
+            >
+              الأسعار
+            </Link>
           </li>
           <li>
-            <Link href="https://www.github.com/v0id-user" className="text-gray-500 hover:text-gray-800 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gray-500 hover:after:w-full after:transition-all after:duration-300 font-light">قيت هوب</Link>
+            <Link
+              href="https://www.github.com/v0id-user"
+              className="text-gray-500 hover:text-gray-800 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gray-500 hover:after:w-full after:transition-all after:duration-300 font-light"
+            >
+              قيت هوب
+            </Link>
           </li>
         </ul>
       </nav>
@@ -64,21 +97,61 @@ export default function Home() {
       {/* Footer Links */}
       <footer className="w-full max-w-4xl px-4">
         <div className="flex flex-wrap justify-center gap-x-2 gap-y-3 text-sm">
-          <Link href="/terms" className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300">الشروط والأحكام</Link>
+          <Link
+            href="/terms"
+            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
+          >
+            الشروط والأحكام
+          </Link>
           <span className="text-gray-400">•</span>
-          <Link href="/privacy" className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300">سياسة الخصوصية</Link>
+          <Link
+            href="/privacy"
+            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
+          >
+            سياسة الخصوصية
+          </Link>
           <span className="text-gray-400">•</span>
-          <Link href="/acceptable-use" className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300">سياسة الاستخدام المقبول</Link>
+          <Link
+            href="/acceptable-use"
+            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
+          >
+            سياسة الاستخدام المقبول
+          </Link>
           <span className="text-gray-400">•</span>
-          <Link href="/refund-cancellation" className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300">سياسة الاسترداد والإلغاء</Link>
+          <Link
+            href="/refund-cancellation"
+            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
+          >
+            سياسة الاسترداد والإلغاء
+          </Link>
           <span className="text-gray-400">•</span>
-          <Link href="/eula" className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300">اتفاقية ترخيص المستخدم النهائي</Link>
+          <Link
+            href="/eula"
+            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
+          >
+            اتفاقية ترخيص المستخدم النهائي
+          </Link>
           <span className="text-gray-400">•</span>
-          <Link href="/security-policy" className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300">سياسة الأمان</Link>
+          <Link
+            href="/security-policy"
+            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
+          >
+            سياسة الأمان
+          </Link>
           <span className="text-gray-400">•</span>
-          <Link href="/data-processing-agreement" className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300">اتفاقية معالجة البيانات</Link>
+          <Link
+            href="/data-processing-agreement"
+            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
+          >
+            اتفاقية معالجة البيانات
+          </Link>
           <span className="text-gray-400">•</span>
-          <Link href="/cookies-policy" className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300">سياسة الكوكيز</Link>
+          <Link
+            href="/cookies-policy"
+            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
+          >
+            سياسة الكوكيز
+          </Link>
         </div>
       </footer>
     </main>

@@ -4,11 +4,10 @@ import PolicyLayout from '@/components/PolicyLayout';
 import { Metadata } from 'next';
 import ReactMarkdown from 'react-markdown';
 
-
 type PolicyPageProps = {
-  params: Promise<{ policy: string }>
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-}
+  params: Promise<{ policy: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
 export async function generateMetadata({ params }: PolicyPageProps): Promise<Metadata> {
   const param = await params;
@@ -23,7 +22,7 @@ export async function generateMetadata({ params }: PolicyPageProps): Promise<Met
 export default async function PolicyPage({ params }: PolicyPageProps) {
   const param = await params;
   const policy = policies[param.policy];
-  
+
   if (!policy) {
     notFound();
   }
@@ -33,4 +32,4 @@ export default async function PolicyPage({ params }: PolicyPageProps) {
       <ReactMarkdown>{policy.content}</ReactMarkdown>
     </PolicyLayout>
   );
-} 
+}

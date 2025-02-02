@@ -5,7 +5,7 @@ interface Policy {
 }
 
 export const policies: Record<string, Policy> = {
-  'terms': {
+  terms: {
     id: 'terms',
     title: 'الشروط والأحكام',
     content: `
@@ -18,9 +18,9 @@ export const policies: Record<string, Policy> = {
 يجب استخدام خدماتنا وفقاً للقوانين المعمول بها...
 
 [المزيد من المحتوى سيضاف هنا]
-    `
+    `,
   },
-  'privacy': {
+  privacy: {
     id: 'privacy',
     title: 'سياسة الخصوصية',
     content: `
@@ -29,7 +29,7 @@ export const policies: Record<string, Policy> = {
 ## 1. جمع المعلومات
 نحن لا نجمع معلومات محدودة لتحسين تجربتك...
 
-    `
+    `,
   },
   'acceptable-use': {
     id: 'acceptable-use',
@@ -41,7 +41,7 @@ export const policies: Record<string, Policy> = {
 يجب على جميع المستخدمين اتباع هذه القواعد الأساسية...
 
 [المزيد من المحتوى سيضاف هنا]
-    `
+    `,
   },
   // Add other policies here...
-}; 
+};
