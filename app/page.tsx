@@ -1,6 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Lock } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader,  DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+const CreateRoomDialog = () => {
+  {/* TODO: Add a form to create a room */}
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button className="group rounded-full font-bold from-[#F3F3F3] to-[#D4D4D4] bg-gradient-to-b border border-[#E3E3E3] text-black px-12 py-4 relative hover:shadow-lg transition-shadow duration-300 hover:from-[#E3E3E3] hover:to-[#C4C4C4]">
+          <Lock className="absolute top-1/2 left-4 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={20} />
+          إنشاء غرفة
+        </button>
+      </DialogTrigger>
+
+      <DialogContent dir="rtl">
+        <DialogHeader>
+          <DialogTitle>إنشاء غرفة</DialogTitle>
+        </DialogHeader>
+        <DialogDescription>
+          <Input
+            placeholder="اسم الغرفة"
+          />
+        </DialogDescription>
+
+      </DialogContent>
+    </Dialog>
+  )
+}
 
 export default function Home() {
   return (
@@ -22,19 +49,16 @@ export default function Home() {
 
       {/* Main Content */}
       <section className="flex flex-col items-center justify-center gap-8 flex-grow">
-        <Image 
-          src="/veil_logo_black.png" 
-          alt="veil logo" 
-          width={120} 
+        <Image
+          src="/veil_logo_black.png"
+          alt="veil logo"
+          width={120}
           height={120}
-          className="hover:scale-105 transition-transform duration-300" 
+          className="hover:scale-105 transition-transform duration-300"
           priority
         />
         <label className="font-bold">محادثة خاصة، مشفرة، آمنة</label>
-        <button className="group rounded-full font-bold from-[#F3F3F3] to-[#D4D4D4] bg-gradient-to-b border border-[#E3E3E3] text-black px-12 py-4 relative hover:shadow-lg transition-shadow duration-300 hover:from-[#E3E3E3] hover:to-[#C4C4C4]">
-          إنشاء غرفة
-          <Lock className="absolute top-1/2 right-4 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={20} />
-        </button>
+        <CreateRoomDialog />
       </section>
 
       {/* Footer Links */}
