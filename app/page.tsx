@@ -31,7 +31,7 @@ const CreateRoomDialog = () => {
 
       {/* Content */}
       <DialogContent dir="rtl">
-        <DialogHeader>
+        <DialogHeader className="flex flex-col items-start justify-center w-full pr-2 pt-5">
           <DialogTitle>إنشاء غرفة</DialogTitle>
         </DialogHeader>
         <DialogDescription>
