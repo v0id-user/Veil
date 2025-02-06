@@ -1,6 +1,6 @@
-interface User{
-    id: string;
-    publicKey: string;
+interface User {
+  id: string;
+  publicKey: string;
 }
 
 export default User;
