@@ -1,9 +1,4 @@
-interface Message {
-  content: string;
-  createdAt: Date;
-  sender: string;
-  receiver: string;
-  roomId: string;
-}
+import Message from "./message";
 
-export default Message;
+export type { Message };
+
