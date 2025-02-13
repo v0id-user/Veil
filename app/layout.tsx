@@ -8,7 +8,7 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: 'Veil - انشاء غرفة',
+  title: 'Veil - الصفحة الرئيسية',
   description: 'محادثة خاصة، مشفرة، آمنة',
 };
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <body className={`${ibmPlexSansArabic.className} antialiased`}>{children}</body>
     </html>
   );
