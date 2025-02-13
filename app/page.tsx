@@ -1,159 +1,56 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Lock, RotateCcw } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogDescription,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-
-const CreateRoomDialog = () => {
-  {
-    /* TODO: Add a form to create a room */
-  }
-  return (
-    <Dialog>
-      {/* Trigger */}
-      <DialogTrigger asChild dir="rtl">
-        <button className="group rounded-full font-bold from-[#F3F3F3] to-[#D4D4D4] bg-gradient-to-b border border-[#E3E3E3] text-black px-12 py-4 relative hover:shadow-lg transition-shadow duration-300 hover:from-[#E3E3E3] hover:to-[#C4C4C4]">
-          <Lock
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            size={20}
-          />
-          إنشاء غرفة
-        </button>
-      </DialogTrigger>
-
-      {/* Content */}
-      <DialogContent dir="rtl">
-        <DialogHeader className="flex flex-col items-start justify-center w-full pr-2 pt-5">
-          <DialogTitle>إنشاء غرفة</DialogTitle>
-        </DialogHeader>
-        <DialogDescription>
-          <Input placeholder="اسم الغرفة" />
-          <RotateCcw
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            size={20}
-          />
-          <Button className="w-full rounded-full mt-4">إنشاء</Button>
-        </DialogDescription>
-      </DialogContent>
-    </Dialog>
-  );
-};
+"use client"
+import Button from "@/components/Button";
+import Nav from "@/components/Nav";
+import HeroText from "@/public/hero-text-lazy.svg"
+import ArrowDownToLine from "@/public/icons/arrow-down-to-line.svg"
+import PreviewMessages from "@/public/preview-messages.svg"
+import PreviewWide from "@/public/preview-wide.svg"
+import { motion } from "motion/react"
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-between py-10 px-4">
-      {/* Navbar */}
-      <nav className="w-full max-w-2xl">
-        <ul className="flex justify-center gap-12">
-          <li>
-            <Link
-              href="/about"
-              className="text-gray-500 hover:text-gray-800 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gray-500 hover:after:w-full after:transition-all after:duration-300 font-light"
-            >
-              حول
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/pricing"
-              className="text-gray-500 hover:text-gray-800 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gray-500 hover:after:w-full after:transition-all after:duration-300 font-light"
-            >
-              الأسعار
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="https://www.github.com/v0id-user"
-              className="text-gray-500 hover:text-gray-800 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gray-500 hover:after:w-full after:transition-all after:duration-300 font-light"
-            >
-              قيت هوب
-            </Link>
-          </li>
-        </ul>
-      </nav>
-
-      {/* Main Content */}
-      <section className="flex flex-col items-center justify-center gap-8 flex-grow">
-        <Image
-          src="/veil_logo_black.png"
-          alt="veil logo"
-          width={120}
-          height={120}
-          className="hover:scale-105 transition-transform duration-300"
-          priority
-        />
-        <label className="font-bold">محادثة خاصة، مشفرة، آمنة</label>
-        <CreateRoomDialog />
-      </section>
-
-      {/* Footer Links */}
-      <footer className="w-full max-w-4xl px-4">
-        <div className="flex flex-wrap justify-center gap-x-2 gap-y-3 text-sm">
-          <Link
-            href="/terms"
-            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
+    <main className="min-h-screen mx-4 sm:mx-14 ">
+      <Nav />
+      <section className="flex flex-col items-center 
+                          aspect-[2.2/1] my-5 justify-center 
+                          bg-[url('/cozy-1.png')] bg-cover bg-center 
+                          rounded-[25px] relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10 rounded-[25px]"></div>
+        <div className="flex z-10 gap-16">
+          <div 
+            className="flex flex-col"
           >
-            الشروط والأحكام
-          </Link>
-          <span className="text-gray-400">•</span>
-          <Link
-            href="/privacy"
-            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
+            <HeroText />
+            <div className="flex items-center gap-2">
+              <Button className="flex items-center gap-2 w-fit text-xl py-3">
+                <ArrowDownToLine />
+                تحميل الان
+              </Button>
+              <Button variant="secondary" className="flex items-center gap-2 w-fit text-xl py-3">
+                تسجيل الدخول
+              </Button>
+            </div>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            سياسة الخصوصية
-          </Link>
-          <span className="text-gray-400">•</span>
-          <Link
-            href="/acceptable-use"
-            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
-          >
-            سياسة الاستخدام المقبول
-          </Link>
-          <span className="text-gray-400">•</span>
-          <Link
-            href="/refund-cancellation"
-            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
-          >
-            سياسة الاسترداد والإلغاء
-          </Link>
-          <span className="text-gray-400">•</span>
-          <Link
-            href="/eula"
-            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
-          >
-            اتفاقية ترخيص المستخدم النهائي
-          </Link>
-          <span className="text-gray-400">•</span>
-          <Link
-            href="/security-policy"
-            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
-          >
-            سياسة الأمان
-          </Link>
-          <span className="text-gray-400">•</span>
-          <Link
-            href="/data-processing-agreement"
-            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
-          >
-            اتفاقية معالجة البيانات
-          </Link>
-          <span className="text-gray-400">•</span>
-          <Link
-            href="/cookies-policy"
-            className="text-gray-500 hover:text-gray-800 font-light transition-colors duration-300"
-          >
-            سياسة الكوكيز
-          </Link>
+            <PreviewMessages />
+          </motion.div>
         </div>
-      </footer>
+      </section>
+      <span className="text-right text-sm text-gray-500 mr-3">*يخضع استخدام جميع الخدمات للشروط والأحكام.</span>
+      <div className="mt-10 w-full h-fit flex items-center justify-center overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <PreviewWide />
+        </motion.div>
+      </div>
     </main>
   );
 }
