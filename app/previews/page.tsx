@@ -2,6 +2,7 @@
 import { useState } from "react";
 import PButtons from "./pButtons";
 import Pheader from "./Pheader";
+import PFooter from "./PFooter";
 
 export default function Previews() {
     const [selectedComponent, setSelectedComponent] = useState("buttons");
@@ -16,10 +17,19 @@ export default function Previews() {
                 return (
                     <Pheader/>
                 );
+            case "footer":
+                return (
+                    <PFooter/>
+                );
             default:
                 return <div className="p-8">Select a component to preview</div>;
         }
     };
+
+    if (process.env.NEXT_PUBLIC_DEBUG === "false") {
+        window.location.href = "/";
+        return;
+    }
 
     return (
         <div className="flex min-h-screen ltr:flex-row rtl:flex-row-reverse">
@@ -45,6 +55,16 @@ export default function Previews() {
                     }`}
                 >
                     Header
+                </button>
+                <button
+                    onClick={() => setSelectedComponent("footer")}
+                    className={`w-full text-left p-2 rounded ${
+                        selectedComponent === "footer" 
+                            ? "bg-gray-200" 
+                            : "hover:bg-gray-200"
+                    }`}
+                >
+                    Footer
                 </button>
             </div>
 
