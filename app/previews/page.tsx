@@ -26,6 +26,11 @@ export default function Previews() {
         }
     };
 
+    if (process.env.NEXT_PUBLIC_DEBUG === "false") {
+        window.location.href = "/";
+        return;
+    }
+
     return (
         <div className="flex min-h-screen ltr:flex-row rtl:flex-row-reverse">
             {/* Sidebar */}

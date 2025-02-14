@@ -39,8 +39,8 @@ export default function Nav() {
 
             {/* CTAs Buttons - Desktop */}
             <div className="hidden lg:flex items-center gap-4">
-                <Button>التحميل الان</Button>
-                <Button variant="secondary">تسجيل الدخول</Button>
+                <Button onClick={() => window.location.href = "/download"}>التحميل الان</Button>
+                <Button variant="secondary" onClick={() => window.location.href = "/sign-in"}>تسجيل الدخول</Button>
             </div>
 
             {/* Mobile Download Button */}

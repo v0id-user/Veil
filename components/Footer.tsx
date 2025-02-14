@@ -31,8 +31,8 @@ export default function Footer() {
                         <span className="text-xs opacity-70">© جميع الحقوق محفوظة 2025</span>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <Button className="h-fit w-fit py-3 px-6">التحميل الان</Button>
-                        <Button variant="secondary" className="h-fit w-fit py-3 px-6">تسجيل الدخول</Button>
+                        <Button className="h-fit w-fit py-3 px-6" onClick={() => window.location.href = "/download"}>التحميل الان</Button>
+                        <Button variant="secondary" className="h-fit w-fit py-3 px-6" onClick={() => window.location.href = "/sign-in"}>تسجيل الدخول</Button>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 justify-between items-center sm:items-start">
                         <LinksColumn title="من نحن" links={[{ name: "نبذة عنا", url: "/about" }, { name: "الخصوصية", url: "/privacy" }, { name: "الشروط والأحكام", url: "/terms" }]} />

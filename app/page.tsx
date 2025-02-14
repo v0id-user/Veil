@@ -28,11 +28,11 @@ export default function Home() {
               <h1 className="text-4xl font-bold text-white">الخصوصية. ببساطة.</h1>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-2">
-              <Button className="flex items-center gap-2 w-fit text-lg sm:text-xl py-3">
+              <Button className="flex items-center gap-2 w-fit text-lg sm:text-xl py-3" onClick={() => window.location.href = "/download"}>
                 <ArrowDownToLine />
                 تحميل الان
               </Button>
-              <Button variant="secondary" className="flex items-center gap-2 w-fit text-lg sm:text-xl py-3">
+              <Button variant="secondary" className="flex items-center gap-2 w-fit text-lg sm:text-xl py-3" onClick={() => window.location.href = "/sign-up"}>
                 تسجيل الدخول
               </Button>
             </div>
@@ -43,7 +43,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="w-full sm:w-auto"
           >
-            <div className="hidden sm:block">
+            <div className="hidden sm:block sm:hover:cursor-pointer"  onClick={() => window.location.href = "/e2ee"}>
                 <PreviewMessages />
             </div>
           </motion.div>
@@ -65,7 +65,7 @@ export default function Home() {
           </motion.div>
         </div>
         <span className="text-center text-[32px] sm:text-[48px] w-full max-w-4xl px-4">طوّر تواصلك بحرية وأمان، مع رسائل مشفرة ومكالمات خاصة تضمن لك خصوصيتك وتبقيك قريباً من أحبائك أينما كانوا.</span>
-        <Button className="text-[24px] sm:text-[32px] py-4 sm:py-5 px-6 sm:px-10">ابدأ بالتواصل الآن</Button>
+        <Button className="text-[24px] sm:text-[32px] py-4 sm:py-5 px-6 sm:px-10" onClick={() => window.location.href = "/sign-up"}>ابدأ بالتواصل الآن</Button>
       </div>
       <div className="w-full mt-24">
         <Footer />
