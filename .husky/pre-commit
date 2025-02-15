@@ -8,21 +8,23 @@ NC='\033[0m' # No Color
 
 echo "${YELLOW}🔍 Running pre-commit checks...${NC}"
 
-# Run linting
+# Run formatting first
+echo "\n${YELLOW}Running Prettier...${NC}"
+if npm run format; then
+    echo "${GREEN}✅ Code formatting passed!${NC}"
+    # Stage the formatted files
+    git add -u
+else
+    echo "${RED}❌ Code formatting failed! Please fix the formatting issues.${NC}"
+    exit 1
+fi
+
+# Run linting after formatting
 echo "\n${YELLOW}Running ESLint...${NC}"
 if npm run lint; then
     echo "${GREEN}✅ Linting passed!${NC}"
 else
     echo "${RED}❌ Linting failed! Please fix the errors above.${NC}"
-    exit 1
-fi
-
-# Run formatting
-echo "\n${YELLOW}Running Prettier...${NC}"
-if npm run format; then
-    echo "${GREEN}✅ Code formatting passed!${NC}"
-else
-    echo "${RED}❌ Code formatting failed! Please fix the formatting issues.${NC}"
     exit 1
 fi
 
