@@ -1,7 +1,7 @@
 'use client';
 import Button from '@/components/Button';
-import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 import HeroText from '@/public/hero-text-lazy.svg';
 import ArrowDownToLine from '@/public/icons/arrow-down-to-line.svg';
 import PreviewMessages from '@/public/preview-messages.svg';
@@ -11,7 +11,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen ">
+    <>
       <Nav />
       <section
         className="flex mx-4 sm:mx-14 flex-col items-center 
@@ -42,7 +42,7 @@ export default function Home() {
                 className="flex items-center gap-2 w-fit text-lg sm:text-xl py-3"
                 onClick={() => (window.location.href = '/sign-up')}
               >
-                تسجيل الدخول
+                ابدأ بالتواصل
               </Button>
             </div>
           </div>
@@ -91,9 +91,9 @@ export default function Home() {
           ابدأ بالتواصل الآن
         </Button>
       </div>
-      <div className="w-full mt-24">
+      <div className="w-full mt-12">
         <Footer />
       </div>
-    </main>
+    </>
   );
 }

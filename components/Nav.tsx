@@ -1,3 +1,5 @@
+'use client';
+
 import Link from '@/components/Link';
 import Button from '@/components/Button';
 import TextWithLogo from '@/public/text-with-logo.svg';
@@ -47,15 +49,15 @@ export default function Nav() {
 
       {/* CTAs Buttons - Desktop */}
       <div className="hidden lg:flex items-center gap-4">
-        <Button onClick={() => (window.location.href = '/download')}>التحميل الان</Button>
-        <Button variant="secondary" onClick={() => (window.location.href = '/sign-in')}>
+        <Button href="/download">التحميل الان</Button>
+        <Button variant="secondary" href="/sign-in">
           تسجيل الدخول
         </Button>
       </div>
 
       {/* Mobile Download Button */}
       <div className="lg:hidden">
-        <Button className="flex items-center gap-2">
+        <Button href="/download" className="flex items-center gap-2">
           <ArrowDownToLine />
           تحميل
         </Button>
@@ -74,7 +76,9 @@ export default function Nav() {
           <Link href="/privacy">الخصوصية</Link>
           <Link href="/faq">مركز المساعدة</Link>
           <Link href="/download">التطبيقات</Link>
-          <Button variant="secondary">تسجيل الدخول</Button>
+          <Button variant="secondary" href="/sign-in">
+            تسجيل الدخول
+          </Button>
         </motion.div>
       )}
     </nav>

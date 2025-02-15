@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={`${ibmPlexSansArabic.className} antialiased`}>{children}</body>
+      <body className={`${ibmPlexSansArabic.className} antialiased`}>
+        <main className="min-h-screen">{children}</main>
+      </body>
     </html>
   );
 }

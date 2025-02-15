@@ -1,4 +1,10 @@
+import { Metadata } from 'next';
 import AuthForm from '@/components/AuthForm';
+
+export const metadata: Metadata = {
+  title: 'Veil - إنشاء حساب',
+  description: 'محادثة خاصة، مشفرة، آمنة',
+};
 
 export default function SignUp() {
   return (
