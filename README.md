@@ -1,6 +1,6 @@
 # Veil Official Landing Page
 
-![Next.js Banner](https://nextjs.org/static/favicon/favicon.ico) 
+![Next.js Banner](https://nextjs.org/static/favicon/favicon.ico)
 
 Veil is a platform designed for secure communication, enabling users to exchange messages and assets in real-time. This landing page serves as an entry point to a larger microfrontend architecture, showcasing the capabilities of the Veil platform while integrating seamlessly with other components of the system.
 

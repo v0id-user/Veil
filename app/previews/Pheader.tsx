@@ -1,9 +1,9 @@
-import Nav from "@/components/Nav";
+import Nav from '@/components/Nav';
 
 export default function Pheader() {
-    return (
-        <header>
-            <Nav/>
-        </header>
-    )
+  return (
+    <header>
+      <Nav />
+    </header>
+  );
 }
