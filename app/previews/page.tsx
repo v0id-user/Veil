@@ -26,7 +26,7 @@ export default function Previews() {
         }
     };
 
-    if (process.env.NEXT_PUBLIC_DEBUG === "false") {
+    if (process.env.NEXT_PUBLIC_DEBUG === "false" || process.env.NEXT_PUBLIC_DEBUG === undefined) {
         window.location.href = "/";
         return;
     }
