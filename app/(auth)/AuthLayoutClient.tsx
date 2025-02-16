@@ -9,7 +9,7 @@ export default function AuthLayoutClient({ children }: { children: React.ReactNo
   return (
     <>
       <div className="flex flex-col lg:flex-row min-h-screen" dir="rtl" lang="ar">
-        <div className="flex flex-col items-center justify-center w-full h-full pt-44 pr-14">
+        <div className="flex flex-col items-center justify-center w-full h-full pt-24 pr-14">
           {children}
         </div>
         {/* Show image only on sign-up page */}

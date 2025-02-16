@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function About() {
   return (
     <div className="flex flex-col items-center min-h-screen w-full">
-      <div className="flex-grow flex flex-col items-center p-5 mt-32">
+      <div className="flex-grow flex flex-col items-center p-5 mt-16">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">سياسة الخصوصية لـ veil</h1>
         <div className="max-w-3xl px-4 text-right">
           <p className="text-base md:text-lg mb-4">

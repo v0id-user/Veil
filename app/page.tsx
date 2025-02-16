@@ -56,7 +56,9 @@ export default function Home() {
               className="hidden sm:block sm:hover:cursor-pointer"
               onClick={() => (window.location.href = '/e2ee')}
             >
-              <PreviewMessages />
+              <div className="hidden 2xl::block">
+                <PreviewMessages />
+              </div>
             </div>
           </motion.div>
         </div>
