@@ -10,6 +10,9 @@ import { ChevronDown } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
+import { Textarea } from '@/components/ui/textarea';
+import Button from '@/components/Button';
+
 const faqItems = [
   {
     question: 'لا يمكنني تسجيل الدخول، ماذا أفعل؟',
@@ -108,8 +111,21 @@ export default function FAQ() {
           لديك سؤال آخر؟ يرجى الاتصال بنا عبر البريد الإلكتروني أو الاتصال بنا من خلال الوسائط
           الاجتماعية.
         </p>
+        {/* Contact Us Form */}
+        <div className="flex flex-col items-center gap-4 w-full max-w-2xl">
+          <input
+            className="w-full p-2 border border-gray-300 rounded-md"
+            type="email"
+            placeholder="البريد الإلكتروني"
+          />
+          <Textarea
+            className="w-full p-2 border border-gray-300 rounded-md"
+            placeholder="الرسالة"
+          />
+          <Button className="px-28 font-bold py-2">إرسال</Button>
+        </div>
       </div>
-      <div className="flex text-sm text-gray-500 underline mt-10 gap-10 hover:text-gray-700 transition-all duration-200">
+      <div className="flex text-sm text-gray-500 underline mt-10 gap-10 hover:text-gray-700 transition-all duration-200 ">
         <Link href="/">الرئيسية</Link>
       </div>
     </div>

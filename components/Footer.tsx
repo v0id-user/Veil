@@ -62,25 +62,25 @@ export default function Footer() {
             <LinksColumn
               title="تطبيقات"
               links={[
-                { name: 'الويب', url: '/web' },
-                { name: 'أجهزة الأندرويد', url: '/android' },
-                { name: 'أجهزة الأي أو إس', url: '/ios' },
-                { name: 'سطح المكتب', url: '/desktop' },
+                { name: 'الويب', url: '/' },
+                { name: 'أجهزة الأندرويد', url: '/download' },
+                { name: 'أجهزة الأي أو إس', url: '/download' },
+                { name: 'سطح المكتب', url: '/download' },
               ]}
             />
             <LinksColumn
               title="المساعدة"
               links={[
-                { name: 'فتح تذكرة', url: '/support/ticket' },
-                { name: 'الاستفسارات', url: '/support/inquiries' },
-                { name: 'المساعدة', url: '/support' },
+                { name: 'فتح تذكرة', url: '/faq' },
+                { name: 'الاستفسارات', url: '/faq' },
+                { name: 'المساعدة', url: '/faq' },
               ]}
             />
             <LinksColumn
-              title="من التواصل"
+              title="قنوات التواصل"
               links={[
-                { name: 'البريد الإلكتروني', url: '/contact/email' },
-                { name: 'إكس', url: '/contact/x' },
+                { name: 'البريد الإلكتروني', url: 'mailto:hello@veil.im' },
+                { name: 'إكس', url: 'https://x.com/v0id_user' },
               ]}
             />
           </div>

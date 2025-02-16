@@ -8,6 +8,8 @@ import { useAuth } from '@/lib/api/auth';
 import { BeatLoader } from 'react-spinners';
 import { useState } from 'react';
 import { AuthResponse } from '@/interfaces/auth';
+import { useRouter } from 'next/navigation';
+
 interface AuthFormProps {
   type: 'sign-in' | 'sign-up';
   title: string;
@@ -29,7 +31,7 @@ export default function AuthForm({
 }: AuthFormProps) {
   const { createAccount, signIn, loading } = useAuth();
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
+  const router = useRouter();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
@@ -58,6 +60,7 @@ export default function AuthForm({
     if (response.message.status === 'error') {
       setErrorMessage(response.message.getMessage());
     }
+    router.push(`${process.env.NEXT_PUBLIC_CHAT_SERVICE}/`);
   };
 
   return (
