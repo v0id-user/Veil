@@ -9,14 +9,16 @@ export const useAuth = () => {
 
   const createAccount = async (credentials: Credentials) => {
     setLoading(true);
-    await authService.createAccount(credentials);
+    const response = await authService.createAccount(credentials);
     setLoading(false);
+    return response;
   };
 
   const signIn = async (credentials: Credentials) => {
     setLoading(true);
-    await authService.signIn(credentials);
+    const response = await authService.signIn(credentials);
     setLoading(false);
+    return response;
   };
 
   const signOut = async () => {

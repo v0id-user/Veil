@@ -7,7 +7,7 @@ import Button from '@/components/Button';
 import { useAuth } from '@/lib/api/auth';
 import { BeatLoader } from 'react-spinners';
 import { useState } from 'react';
-
+import { AuthResponse } from '@/interfaces/auth';
 interface AuthFormProps {
   type: 'sign-in' | 'sign-up';
   title: string;
@@ -48,10 +48,15 @@ export default function AuthForm({
 
     setErrorMessage(null); // Clear previous error messages
 
+    let response: AuthResponse;
     if (type === 'sign-up') {
-      await createAccount({ email });
+      response = await createAccount({ email });
     } else {
-      await signIn({ email });
+      response = await signIn({ email });
+    }
+
+    if (response.message.status === 'error') {
+      setErrorMessage(response.message.getMessage());
     }
   };
 
