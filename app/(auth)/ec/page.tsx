@@ -9,6 +9,8 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
 } from '@/components/ui/input-otp';
+import Checkbox from '@/components/Checkbox';
+import { Info } from 'lucide-react';
 
 export default function QRPage() {
   return (
@@ -26,38 +28,51 @@ export default function QRPage() {
 
       {/* QR Box */}
       <div className="flex flex-col-reverse md:flex-row items-center md:items-start w-full max-w-6xl bg-white rounded-xl shadow-sm border border-black p-6 md:p-12 mt-4 md:mt-8">
-        {/* Code section */}
-        <div className="flex flex-col items-center space-y-4 md:space-y-6 w-full md:w-1/2 border-none md:border-r border-gray-100 md:pl-12">
-          <h1>قم بإدخال الكود الذي استلمته على بريدك الإلكتروني</h1>
-          <span className="text-gray-500 text-sm">
+        {/* Instructions section */}
+        <div className="flex-1 pt-10 md:pr-12 h-full mt-8 md:mt-0">
+          <h1 className="text-xl md:text-2xl font-bold mb-6 md:mb-8">
+            قم بإدخال الكود الذي استلمته على بريدك الإلكتروني
+          </h1>
+          <span className="text-gray-500 text-sm block mb-8">
             يرجى التحقق من بريدك الإلكتروني hey@example.com، فقد تم إرسال رسالة تحتوي على رمز التحقق
             لربط حسابك. إذا لم تجدها في البريد الوارد، يرجى مراجعة مجلد البريد العشوائي أو المهملات.
           </span>
 
-          <InputOTP maxLength={8}>
-            <InputOTPGroup>
-              <InputOTPSlot index={0} />
-              <InputOTPSlot index={1} />
-              <InputOTPSlot index={2} />
-              <InputOTPSlot index={3} />
-            </InputOTPGroup>
-            <InputOTPSeparator />
-            <InputOTPGroup>
-              <InputOTPSlot index={4} />
-              <InputOTPSlot index={5} />
-              <InputOTPSlot index={6} />
-              <InputOTPSlot index={7} />
-            </InputOTPGroup>
-          </InputOTP>
+          <div className="flex flex-col w-full items-center space-y-6">
+            <div dir="ltr">
+              <InputOTP maxLength={8}>
+                <InputOTPGroup>
+                  <InputOTPSlot index={0} />
+                  <InputOTPSlot index={1} />
+                  <InputOTPSlot index={2} />
+                  <InputOTPSlot index={3} />
+                </InputOTPGroup>
+                <InputOTPSeparator />
+                <InputOTPGroup>
+                  <InputOTPSlot index={4} />
+                  <InputOTPSlot index={5} />
+                  <InputOTPSlot index={6} />
+                  <InputOTPSlot index={7} />
+                </InputOTPGroup>
+              </InputOTP>
+            </div>
 
-          <div className="flex flex-col items-center gap-2 md:gap-3 text-xs md:text-sm">
-            <Link href="/regenerate-qr" className="text-gray-500 hover:text-gray-700 underline">
-              رمز QR لايعمل؟
-            </Link>
-            {/* Email code page a.k.a /ec */}
-            <Link href="/ec" className="text-gray-500 hover:text-gray-700 underline">
-              التسجيل برمز التحقق
-            </Link>
+            <div className="flex flex-row-reverse items-center gap-2">
+              <Info className="w-4 h-4" />
+              <Checkbox name="stay-logged-in">
+                <span className="text-xs md:text-sm">
+                  الإستمرار في تسجيل الدخول لدى هذا المتصفح
+                </span>
+              </Checkbox>
+            </div>
+            <div className="flex flex-col items-center gap-2 md:gap-3 text-xs md:text-sm">
+              <Link href="/regenerate-ec" className="text-gray-500 hover:text-gray-700 underline">
+                لم يصلني رمز التحقق
+              </Link>
+              <Link href="/qr" className="text-gray-500 hover:text-gray-700 underline">
+                التسجيل برمز QR
+              </Link>
+            </div>
           </div>
         </div>
       </div>
